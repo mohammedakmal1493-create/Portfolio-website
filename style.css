@@ -786,4 +786,107 @@ html { scroll-behavior: smooth; }
 
 .site-footer p {
     margin: 0;
+
+}
+
+/* ===================== */
+/* MOBILE OPTIMIZATION   */
+/* ===================== */
+
+@media (max-width: 768px) {
+    /* Adjust Section Spacing */
+    .glass-section {
+        width: 95%;
+        padding: 30px 20px;
+        margin: 40px auto;
+    }
+
+    /* Home Section Layout */
+    .home {
+        flex-direction: column-reverse; /* Put image on top of text */
+        gap: 30px;
+        text-align: center;
+    }
+
+    .home-detail h1 {
+        font-size: 36px;
+    }
+
+    .home-detail h2 {
+        font-size: 20px;
+    }
+
+    .download-social {
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .img-box {
+        width: 240px;
+        height: 240px;
+    }
+
+    /* About Section */
+    .about-grid {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    .about-grid img {
+        margin: 0 auto;
+    }
+
+    .education-item {
+        flex-direction: column;
+        gap: 5px;
+    }
+
+    .edu-left {
+        max-width: 100%;
+    }
+
+    /* Skills & Projects */
+    .skills-grid {
+        grid-template-columns: repeat(2, 1fr); /* 2 columns on mobile */
+        gap: 15px;
+    }
+
+    .project-card.active {
+        grid-column: span 1; /* Reset expansion for mobile screens */
+    }
+
+    /* Contact & ID Card */
+    .contact-wrapper {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    .id-card {
+        width: 100%;
+        max-width: 320px;
+        transform: rotate(0deg); /* Remove rotation for better fit */
+        animation: floatCardMobile 6s ease-in-out infinite;
+    }
+
+    @keyframes floatCardMobile {
+        50% { transform: translateY(-10px); }
+    }
+
+    /* Header Logo Adjustment */
+    .logo img {
+        width: 200px; /* Resize wide logo */
+        height: auto;
+    }
+}
+
+/* Extra small devices (phones under 480px) */
+@media (max-width: 480px) {
+    .skills-grid {
+        grid-template-columns: 1fr; /* Single column for very small screens */
+    }
+    
+    .home-header {
+        padding: 15px 20px;
+    }
 }
